@@ -2,8 +2,8 @@ package org.martinlippert.sb3.sb3demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.actuate.trace.http.HttpTraceRepository;
-import org.springframework.boot.actuate.trace.http.InMemoryHttpTraceRepository;
+import org.springframework.boot.actuate.web.exchanges.HttpExchangeRepository;
+import org.springframework.boot.actuate.web.exchanges.InMemoryHttpExchangeRepository;
 
 @SpringBootApplication
 public class Sb3DemoApplication {
@@ -12,8 +12,9 @@ public class Sb3DemoApplication {
 		SpringApplication.run(Sb3DemoApplication.class, args);
 	}
 	
-	@Bean
-	public HttpTraceRepository htttpTraceRepository() {
-		return new InMemoryHttpTraceRepository();
-	}
+   	@Bean
+    	public HttpExchangeRepository httpTraceRepository()
+    	{
+        	return new InMemoryHttpExchangeRepository();
+    	}
 }
