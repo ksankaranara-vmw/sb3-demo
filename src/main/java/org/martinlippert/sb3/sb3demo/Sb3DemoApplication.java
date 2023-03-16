@@ -9,5 +9,9 @@ public class Sb3DemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(Sb3DemoApplication.class, args);
 	}
-
+	
+	@Bean
+    	public HttpTraceRepository htttpTraceRepository() {
+        	return new InMemoryHttpTraceRepository();
+    	};
 }
